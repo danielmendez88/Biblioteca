@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\Permiso;
 
 class TablePermisoSeeder extends Seeder
 {
@@ -11,6 +12,7 @@ class TablePermisoSeeder extends Seeder
      */
     public function run()
     {
-        //
+        //debe de buscar el modelfactory llamado permiso utilizando eloquent
+        factory(Permiso::class)->times(8)->create();
     }
 }
