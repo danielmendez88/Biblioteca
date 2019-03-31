@@ -19,7 +19,7 @@ use Illuminate\Http\Request;
  */
 
  
-
+Route::apiResource('usuarios', 'UserController');
 Route::apiResource('productos', 'ProductoController');
 Route::apiResource('transacciones', 'TransaccionController');
 Route::apiResource('categorias', 'CategoriaController');

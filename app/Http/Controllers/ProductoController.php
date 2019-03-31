@@ -26,18 +26,25 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //instanciamos la clase producto
+        $producto = new producto;
+        //declaramos la variable con el nombre enviado en el request
+        $producto->nombre = $request->nombre;
+        $producto->stock = $request->stock;
+        //Guardamos el cambio en nuestro modelo
+        $producto->save();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\producto  $producto
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show(producto $producto)
+    public function show($id)
     {
-        //
+        //Solicitamos al modelo el producto con el id solicitado por GET.
+        return producto::where('id', $id)->get();
     }
 
 
